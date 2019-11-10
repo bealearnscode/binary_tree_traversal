@@ -21,6 +21,27 @@ void treeCreate()
 	while (!isEmpty(q))
 	{
 		//Write the logic here
+		p = dequeue(&q);
+		printf("Enter the left child.");
+		scanf("/d", &x);
+
+		if( x != -1)
+		{
+			t = malloc();
+			t -> data = x;
+			t -> lchild = t -> rchild = 0; // or null?
+			p -> lchild = t;
+			enqueue(t);
+		}
+		else
+		{
+			t = malloc();
+			t -> data = x;
+			t -> rchild = t -> lchild = 0; // or null?
+			p -> rchild = t;
+			enqueue(t);
+		}
+		
 	}
 }
 
@@ -74,6 +95,23 @@ int count(struct Node *p, int degree)
 int height(struct Node *p)
 {
 	//Write the logic here
+	int x = 0, y = 0;
+	if (root ==0)
+	{
+		return 0;
+	}
+
+	x = height(root -> lchild);
+	y = height(root -> rchild);
+	if(x > y)
+	{
+		return x + 1;
+	}
+	else
+	{
+		return y + 1;
+	}
+	
 }
 
 void preOrderIterative(struct Node *p)
