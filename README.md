@@ -9,7 +9,7 @@ and a data element. The topmost node in the tree is called the root. Every node 
 in a tree is connected by a directed edge from exactly one other node. This node is called a
 parent. The following is the structure specification of a node for binary tree:
 
-```
+```C++
 struct Node
 {
 struct Node *lchild;
